@@ -1,0 +1,26 @@
+package com.allianz.test;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.allianz.base.AutomationWrapper;
+
+public class LoginUITestPractise extends AutomationWrapper{
+	
+	@Test 
+	public void titleTest()	{
+		
+		String actualTitle = driver.getTitle();
+		Assert.assertEquals(actualTitle, "OrangeHRM");
+	}
+	
+	@Test
+	public void applicationDescriptioTest()	{
+		
+		String actualVersion = driver.findElement(By.xpath("//p[contains(normalize-space(),'OS')]")).getText();
+		Assert.assertEquals(actualVersion, "OrangeHRM OS 5.6.1");
+		
+	}
+	
+}
